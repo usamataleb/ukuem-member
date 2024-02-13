@@ -1,0 +1,26 @@
+# Ignore vendor directory created by Composer
+/vendor/
+
+# Ignore environment-specific files
+.env
+
+# Ignore log files and directories
+/log/
+*.log
+
+# Ignore user-specific files
+/.idea/
+/.vscode/
+.DS_Store
+
+# Ignore Node.js modules
+node_modules/
+
+# Ignore npm debugging logs
+npm-debug.log
+
+# Ignore built production files
+/dist/
+
+# Ignore local development configuration
+/config/local.json
