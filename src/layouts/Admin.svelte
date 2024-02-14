@@ -14,6 +14,7 @@
   import Contribution from "../views/admin/Contribution.svelte";
   import Department from "../views/admin/Department.svelte";
   import Registration from "../views/admin/Registration.svelte";
+  import Auth from "./Auth.svelte";
 
   export let location;
 </script>
@@ -25,7 +26,13 @@
 
     {#if !location.href.includes("/admin/department")}
       <HeaderStats />
+
+      {:else}
+      <div class="relative bg-slate-500 md:pt-32 pb-16 pt-12">
+        <div class="px-4 md:px-10 mx-auto w-full"></div>
+      </div>
     {/if}
+
 
     <div class="px-4 md:px-10 mx-auto w-full -m-24">
       <Router url="admin">
@@ -36,6 +43,7 @@
         <Route path="contribution" component={Contribution} />
         <Route path="statement" component={Statement} />
         <Route path="department" component={Department} />
+        <Route path="auth" component="{Auth}" />
       </Router>
       <FooterAdmin />
     </div>

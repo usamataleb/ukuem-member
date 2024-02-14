@@ -1,6 +1,7 @@
 <script>
   // library for creating dropdown menu appear on click
   import { createPopper } from "@popperjs/core";
+  import { link } from "svelte-routing";
 
   // core components
 
@@ -28,8 +29,8 @@
   <a
     class="text-blueGray-500 block"
     href="#pablo"
-    bind:this="{btnDropdownRef}"
-    on:click="{toggleDropdown}"
+    bind:this={btnDropdownRef}
+    on:click={toggleDropdown}
   >
     <div class="items-center flex">
       <span
@@ -38,20 +39,23 @@
         <img
           alt="..."
           class="w-full rounded-full align-middle border-none shadow-lg"
-          src="{image}"
+          src={image}
         />
       </span>
     </div>
   </a>
   <div
-    bind:this="{popoverDropdownRef}"
-    class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow ? 'block':'hidden'}"
+    bind:this={popoverDropdownRef}
+    class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 {dropdownPopoverShow
+      ? 'block'
+      : 'hidden'}"
   >
     <a
-      href="#pablo" on:click={(e) => e.preventDefault()}
+      use:link
+      href="auth"
       class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
     >
-      Action
+      Logout
     </a>
   </div>
 </div>

@@ -11,7 +11,6 @@ import { terser } from "rollup-plugin-terser";
 import alias from "@rollup/plugin-alias";
 import fs from "fs";
 
-
 const production = !process.env.ROLLUP_WATCH;
 
 // configure aliases for absolute imports

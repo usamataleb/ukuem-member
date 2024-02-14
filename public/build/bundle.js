@@ -1120,7 +1120,7 @@ var app = (function () {
     	let if_block;
     	let if_block_anchor;
     	let current;
-    	const if_block_creators = [create_if_block_1$1, create_else_block$1];
+    	const if_block_creators = [create_if_block_1$1, create_else_block$2];
     	const if_blocks = [];
 
     	function select_block_type(ctx, dirty) {
@@ -1185,7 +1185,7 @@ var app = (function () {
     }
 
     // (43:2) {:else}
-    function create_else_block$1(ctx) {
+    function create_else_block$2(ctx) {
     	let current;
     	const default_slot_template = /*#slots*/ ctx[10].default;
     	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[9], get_default_slot_context);
@@ -3368,9 +3368,9 @@ var app = (function () {
     			a2.textContent = "Blog";
     			attr(a0, "class", "lg:text-white lg:hover:text-blueGray-200 text-blueGray-700 px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold");
     			attr(a0, "href", "#pablo");
-    			attr(a1, "href", "/admin/settings");
+    			attr(a1, "href", "https://ukuem.org/");
     			attr(a1, "class", "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700");
-    			attr(a2, "href", "/admin/tables");
+    			attr(a2, "href", "https://blog.ukuem.org/");
     			attr(a2, "class", "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700");
     			attr(div0, "class", div0_class_value = "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 " + (/*dropdownPopoverShow*/ ctx[0] ? "block" : "hidden"));
     		},
@@ -3763,7 +3763,7 @@ var app = (function () {
     			attr(div2, "class", "text-blueGray-400 text-center mb-3 font-bold");
     			attr(div3, "class", "relative w-full mb-3");
     			attr(div4, "class", "relative w-full mb-3");
-    			attr(a0, "href", "admin");
+    			attr(a0, "href", "/admin");
     			attr(button, "class", "bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150");
     			attr(button, "type", "button");
     			attr(div6, "class", "text-center mt-6");
@@ -3811,7 +3811,7 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					action_destroyer(link.call(null, a0)),
-    					listen(a1, "click", click_handler$5),
+    					listen(a1, "click", click_handler$3),
     					action_destroyer(link.call(null, a2))
     				];
 
@@ -3829,7 +3829,7 @@ var app = (function () {
     	};
     }
 
-    const click_handler$5 = e => e.preventDefault();
+    const click_handler$3 = e => e.preventDefault();
 
     class Login extends SvelteComponent {
     	constructor(options) {
@@ -3979,7 +3979,7 @@ var app = (function () {
 
     			if (!mounted) {
     				dispose = [
-    					listen(a0, "click", click_handler$4),
+    					listen(a0, "click", click_handler$2),
     					action_destroyer(link.call(null, a1))
     				];
 
@@ -3996,7 +3996,7 @@ var app = (function () {
     		}
     	};
     }
-    const click_handler$4 = e => e.preventDefault();
+    const click_handler$2 = e => e.preventDefault();
 
     class Register extends SvelteComponent {
     	constructor(options) {
@@ -4031,7 +4031,7 @@ var app = (function () {
     			t0 = space();
     			div1 = element("div");
     			a1 = element("a");
-    			a1.textContent = "Action";
+    			a1.textContent = "Logout";
     			attr(img, "alt", "...");
     			attr(img, "class", "w-full rounded-full align-middle border-none shadow-lg");
     			if (img.src !== (img_src_value = image)) attr(img, "src", img_src_value);
@@ -4039,7 +4039,7 @@ var app = (function () {
     			attr(div0, "class", "items-center flex");
     			attr(a0, "class", "text-blueGray-500 block");
     			attr(a0, "href", "#pablo");
-    			attr(a1, "href", "#pablo");
+    			attr(a1, "href", "auth");
     			attr(a1, "class", "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700");
     			attr(div1, "class", div1_class_value = "bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48 " + (/*dropdownPopoverShow*/ ctx[0] ? "block" : "hidden"));
     		},
@@ -4058,7 +4058,7 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					listen(a0, "click", /*toggleDropdown*/ ctx[3]),
-    					listen(a1, "click", click_handler$3)
+    					action_destroyer(link.call(null, a1))
     				];
 
     				mounted = true;
@@ -4082,7 +4082,6 @@ var app = (function () {
     }
 
     const image = "../assets/img/default.png";
-    const click_handler$3 = e => e.preventDefault();
 
     function instance$d($$self, $$props, $$invalidate) {
     	let dropdownPopoverShow = false;
@@ -4167,7 +4166,7 @@ var app = (function () {
     			attr(form, "class", "md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3");
     			attr(ul, "class", "flex-col md:flex-row list-none items-center hidden md:flex");
     			attr(div1, "class", "w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4");
-    			attr(nav, "class", "absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4");
+    			attr(nav, "class", "absolute top-0 left-0 w-full z-10 bg-red md:flex-row md:flex-nowrap md:justify-start flex items-center p-4");
     		},
     		m(target, anchor) {
     			insert(target, nav, anchor);
@@ -4181,7 +4180,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen(a, "click", click_handler$2);
+    				dispose = listen(a, "click", click_handler$1);
     				mounted = true;
     			}
     		},
@@ -4204,7 +4203,7 @@ var app = (function () {
     	};
     }
 
-    const click_handler$2 = e => e.preventDefault();
+    const click_handler$1 = e => e.preventDefault();
 
     class AdminNavbar extends SvelteComponent {
     	constructor(options) {
@@ -4286,7 +4285,7 @@ var app = (function () {
     			if (!mounted) {
     				dispose = [
     					listen(a0, "click", /*toggleDropdown*/ ctx[3]),
-    					listen(a1, "click", click_handler$1),
+    					listen(a1, "click", click_handler),
     					listen(a2, "click", click_handler_1),
     					listen(a3, "click", click_handler_2),
     					listen(a4, "click", click_handler_3)
@@ -4312,7 +4311,7 @@ var app = (function () {
     	};
     }
 
-    const click_handler$1 = e => e.preventDefault();
+    const click_handler = e => e.preventDefault();
     const click_handler_1 = e => e.preventDefault();
     const click_handler_2 = e => e.preventDefault();
     const click_handler_3 = e => e.preventDefault();
@@ -27212,75 +27211,72 @@ var app = (function () {
     /* src/components/Cards/CardProfile.svelte generated by Svelte v3.35.0 */
 
     function create_fragment$g(ctx) {
+    	let div14;
     	let div13;
-    	let div12;
-    	let div7;
+    	let div3;
     	let div1;
     	let div0;
     	let img;
     	let img_src_value;
     	let t0;
-    	let div6;
-    	let t12;
-    	let div11;
+    	let div2;
+    	let t1;
+    	let div12;
 
     	return {
     		c() {
+    			div14 = element("div");
     			div13 = element("div");
-    			div12 = element("div");
-    			div7 = element("div");
+    			div3 = element("div");
     			div1 = element("div");
     			div0 = element("div");
     			img = element("img");
     			t0 = space();
-    			div6 = element("div");
+    			div2 = element("div");
+    			t1 = space();
+    			div12 = element("div");
 
-    			div6.innerHTML = `<div class="flex justify-center py-4 lg:pt-4 pt-8"><div class="mr-4 p-3 text-center"><span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">22</span> 
-            <span class="text-sm text-blueGray-400">Friends</span></div> 
-          <div class="mr-4 p-3 text-center"><span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10</span> 
-            <span class="text-sm text-blueGray-400">Photos</span></div> 
-          <div class="lg:mr-4 p-3 text-center"><span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">89</span> 
-            <span class="text-sm text-blueGray-400">Comments</span></div></div>`;
-
-    			t12 = space();
-    			div11 = element("div");
-
-    			div11.innerHTML = `<h3 class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">Jenna Stones</h3> 
+    			div12.innerHTML = `<h2 class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">Usama Talib Juma</h2> 
       <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"><i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-        Los Angeles, California</div> 
+        Mombasa, Zanzibar</div> 
+
+      <div class=" flex justify-center lg:pt-4 pt-8 mt-10"><div class="text-blueGray-600">Member No:</div>  
+        <div class="text-black-600">88989</div></div> 
+
+      <div class="mb-2 flex justify-center  lg:pt-4 pt-8 mt-0 mb-2"><div class="text-blueGray-600">Birth Date:</div>  
+        <div class="text-black-600">19-21-3-1999</div></div> 
+
       <div class="mb-2 text-blueGray-600 mt-10"><i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-        Solution Manager - Creative Tim Officer</div> 
-      <div class="mb-2 text-blueGray-600"><i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-        University of Computer Science</div>`;
+        Tanzania Media Woman Association</div>`;
 
     			attr(img, "alt", "...");
     			if (img.src !== (img_src_value = defaultPc$1)) attr(img, "src", img_src_value);
     			attr(img, "class", "shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px");
     			attr(div0, "class", "relative");
     			attr(div1, "class", "w-full px-4 flex justify-center");
-    			attr(div6, "class", "w-full px-4 text-center mt-20");
-    			attr(div7, "class", "flex flex-wrap justify-center");
-    			attr(div11, "class", "text-center mt-12");
-    			attr(div12, "class", "px-6 pb-20");
-    			attr(div13, "class", "relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16");
+    			attr(div2, "class", "w-full px-4 text-center mt-20");
+    			attr(div3, "class", "flex flex-wrap justify-center");
+    			attr(div12, "class", "text-center mt-12");
+    			attr(div13, "class", "px-6 pb-20");
+    			attr(div14, "class", "relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16");
     		},
     		m(target, anchor) {
-    			insert(target, div13, anchor);
-    			append(div13, div12);
-    			append(div12, div7);
-    			append(div7, div1);
+    			insert(target, div14, anchor);
+    			append(div14, div13);
+    			append(div13, div3);
+    			append(div3, div1);
     			append(div1, div0);
     			append(div0, img);
-    			append(div7, t0);
-    			append(div7, div6);
-    			append(div12, t12);
-    			append(div12, div11);
+    			append(div3, t0);
+    			append(div3, div2);
+    			append(div13, t1);
+    			append(div13, div12);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d(detaching) {
-    			if (detaching) detach(div13);
+    			if (detaching) detach(div14);
     		}
     	};
     }
@@ -27469,7 +27465,7 @@ var app = (function () {
     }
 
     // (78:8) {:else}
-    function create_else_block(ctx) {
+    function create_else_block$1(ctx) {
     	let each_1_anchor;
     	let each_value = /*columns*/ ctx[1];
     	let each_blocks = [];
@@ -27625,7 +27621,7 @@ var app = (function () {
 
     	function select_block_type(ctx, dirty) {
     		if (/*dashboard*/ ctx[3] === true) return create_if_block$1;
-    		return create_else_block;
+    		return create_else_block$1;
     	}
 
     	let current_block_type = select_block_type(ctx);
@@ -28224,9 +28220,9 @@ var app = (function () {
     /* src/components/department/DepartmentProfile.svelte generated by Svelte v3.35.0 */
 
     function create_fragment$7(ctx) {
-    	let div17;
-    	let div16;
-    	let div15;
+    	let div20;
+    	let div19;
+    	let div18;
     	let div7;
     	let div1;
     	let div0;
@@ -28237,22 +28233,15 @@ var app = (function () {
     	let t1;
     	let div6;
     	let t9;
-    	let div11;
-    	let t17;
     	let div14;
-    	let div13;
-    	let div12;
-    	let p;
     	let t19;
-    	let a;
-    	let mounted;
-    	let dispose;
+    	let div17;
 
     	return {
     		c() {
-    			div17 = element("div");
-    			div16 = element("div");
-    			div15 = element("div");
+    			div20 = element("div");
+    			div19 = element("div");
+    			div18 = element("div");
     			div7 = element("div");
     			div1 = element("div");
     			div0 = element("div");
@@ -28263,30 +28252,25 @@ var app = (function () {
     			div6 = element("div");
 
     			div6.innerHTML = `<div class="flex justify-center py-4 lg:pt-4 pt-8"><div class="mr-4 p-3 text-center"><span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">22</span> 
-                                <span class="text-sm text-blueGray-400">Members</span></div> 
-                            <div class="mr-4 p-3 text-center"><span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10,000</span> 
-                                <span class="text-sm text-blueGray-400">Contributed</span></div></div>`;
+              <span class="text-sm text-blueGray-400">Members</span></div> 
+            <div class="mr-4 p-3 text-center"><span class="text-xl font-bold block uppercase tracking-wide text-blueGray-600">10,000</span> 
+              <span class="text-sm text-blueGray-400">Contributed</span></div></div>`;
 
     			t9 = space();
-    			div11 = element("div");
-
-    			div11.innerHTML = `<h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">Jenna Stones</h3> 
-                    <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"><i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-                        Los Angeles, California</div> 
-                    <div class="mb-2 text-blueGray-600 mt-10"><i class="fas fa-briefcase mr-2 text-lg text-blueGray-400"></i>
-                        Solution Manager - Creative Tim Officer</div> 
-                    <div class="mb-2 text-blueGray-600"><i class="fas fa-university mr-2 text-lg text-blueGray-400"></i>
-                        University of Computer Science</div>`;
-
-    			t17 = space();
     			div14 = element("div");
-    			div13 = element("div");
-    			div12 = element("div");
-    			p = element("p");
-    			p.textContent = "An artist of considerable range, Jenna the name\n                                taken by Melbourne-raised, Brooklyn-based Nick\n                                Murphy writes, performs and records all of his\n                                own music, giving it a warm, intimate feel with\n                                a solid groove structure. An artist of\n                                considerable range.";
+
+    			div14.innerHTML = `<h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">Idara ya Habari, Utafiti na Maktaba</h3> 
+        <div class="mb-2 flex justify-center lg:pt-4 pt-8 mt-0 mb-2"><div class="text-blueGray-600">Birth Date:</div>  
+          <div class="text-black-600">19-21-3-1999</div></div> 
+        <div class="mb-2 flex justify-center  lg:pt-4 pt-8 mt-0 mb-2"><div class="text-blueGray-600">Department Leader:</div>  
+            <div class="text-black-600">Usama Talib Juma</div></div>`;
+
     			t19 = space();
-    			a = element("a");
-    			a.textContent = "Show more";
+    			div17 = element("div");
+
+    			div17.innerHTML = `<div class="flex flex-wrap justify-center"><div class="w-full lg:w-9/12 px-4"><p class="mb-4 text-lg leading-relaxed text-blueGray-700">Kusimamia utoaji wa Habari, nakala za utafiti na upatikanaji wa
+              taarifa kwa jamii kupitia Maktaba</p></div></div>`;
+
     			attr(img, "alt", "...");
     			if (img.src !== (img_src_value = ukuem)) attr(img, "src", img_src_value);
     			attr(img, "class", "shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px");
@@ -28295,22 +28279,17 @@ var app = (function () {
     			attr(div2, "class", "w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center");
     			attr(div6, "class", "w-full lg:w-4/12 px-4 lg:order-1");
     			attr(div7, "class", "flex flex-wrap justify-center");
-    			attr(div11, "class", "text-center mt-12");
-    			attr(p, "class", "mb-4 text-lg leading-relaxed text-blueGray-700");
-    			attr(a, "href", "#pablo");
-    			attr(a, "class", "font-normal text-red-500");
-    			attr(div12, "class", "w-full lg:w-9/12 px-4");
-    			attr(div13, "class", "flex flex-wrap justify-center");
-    			attr(div14, "class", "mt-10 py-10 border-t border-blueGray-200 text-center");
-    			attr(div15, "class", "px-6");
-    			attr(div16, "class", "relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64");
-    			attr(div17, "class", "container ");
+    			attr(div14, "class", "text-center mt-12");
+    			attr(div17, "class", "mt-10 py-10 border-t border-blueGray-200 text-center");
+    			attr(div18, "class", "px-6");
+    			attr(div19, "class", "relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64");
+    			attr(div20, "class", "container");
     		},
     		m(target, anchor) {
-    			insert(target, div17, anchor);
-    			append(div17, div16);
-    			append(div16, div15);
-    			append(div15, div7);
+    			insert(target, div20, anchor);
+    			append(div20, div19);
+    			append(div19, div18);
+    			append(div18, div7);
     			append(div7, div1);
     			append(div1, div0);
     			append(div0, img);
@@ -28318,34 +28297,21 @@ var app = (function () {
     			append(div7, div2);
     			append(div7, t1);
     			append(div7, div6);
-    			append(div15, t9);
-    			append(div15, div11);
-    			append(div15, t17);
-    			append(div15, div14);
-    			append(div14, div13);
-    			append(div13, div12);
-    			append(div12, p);
-    			append(div12, t19);
-    			append(div12, a);
-
-    			if (!mounted) {
-    				dispose = listen(a, "click", click_handler);
-    				mounted = true;
-    			}
+    			append(div18, t9);
+    			append(div18, div14);
+    			append(div18, t19);
+    			append(div18, div17);
     		},
     		p: noop,
     		i: noop,
     		o: noop,
     		d(detaching) {
-    			if (detaching) detach(div17);
-    			mounted = false;
-    			dispose();
+    			if (detaching) detach(div20);
     		}
     	};
     }
 
     const ukuem = "/assets/img/default.png";
-    const click_handler = e => e.preventDefault();
 
     class DepartmentProfile extends SvelteComponent {
     	constructor(options) {
@@ -28518,6 +28484,10 @@ var app = (function () {
 
     function create_fragment$5(ctx) {
     	let section0;
+    	let div0;
+    	let span;
+    	let t0;
+    	let div1;
     	let t1;
     	let section1;
     	let div4;
@@ -28533,12 +28503,11 @@ var app = (function () {
     	return {
     		c() {
     			section0 = element("section");
-
-    			section0.innerHTML = `<div class="absolute top-0 w-full h-full bg-center bg-cover" style="
-            background-image: url(https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=2710&amp;q=80);
-          "><span id="blackOverlay" class="w-full h-full absolute opacity-50 bg-black"></span></div> 
-    <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0);"><svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0"><polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon></svg></div>`;
-
+    			div0 = element("div");
+    			span = element("span");
+    			t0 = space();
+    			div1 = element("div");
+    			div1.innerHTML = `<svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0"><polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon></svg>`;
     			t1 = space();
     			section1 = element("section");
     			div4 = element("div");
@@ -28547,6 +28516,12 @@ var app = (function () {
     			t2 = space();
     			div3 = element("div");
     			create_component(cardllist.$$.fragment);
+    			attr(span, "id", "blackOverlay");
+    			attr(span, "class", "w-full h-full absolute opacity-50 bg-black");
+    			attr(div0, "class", "absolute top-0 w-full h-full bg-center bg-cover");
+    			set_style(div0, "background-image", "url(" + departPic + ")");
+    			attr(div1, "class", "top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px");
+    			set_style(div1, "transform", "translateZ(0)");
     			attr(section0, "class", "relative block h-500-px");
     			attr(div2, "class", "w-full lg:w-8/12 px-4");
     			attr(div3, "class", "w-full lg:w-4/12 px-4");
@@ -28555,6 +28530,10 @@ var app = (function () {
     		},
     		m(target, anchor) {
     			insert(target, section0, anchor);
+    			append(section0, div0);
+    			append(div0, span);
+    			append(section0, t0);
+    			append(section0, div1);
     			insert(target, t1, anchor);
     			insert(target, section1, anchor);
     			append(section1, div4);
@@ -28587,6 +28566,8 @@ var app = (function () {
     	};
     }
 
+    const departPic = "/assets/img/department.jpeg";
+
     class Department extends SvelteComponent {
     	constructor(options) {
     		super();
@@ -28597,14 +28578,14 @@ var app = (function () {
     /* src/components/Cards/CardRegisration.svelte generated by Svelte v3.35.0 */
 
     function create_fragment$4(ctx) {
-    	let div58;
+    	let div46;
     	let div1;
     	let t3;
-    	let div57;
+    	let div45;
     	let form;
     	let h61;
     	let t5;
-    	let div56;
+    	let div44;
     	let div3;
     	let div2;
     	let label0;
@@ -28730,66 +28711,24 @@ var app = (function () {
     	let label20;
     	let t67;
     	let input20;
-    	let t68;
-    	let hr0;
-    	let t69;
-    	let h62;
-    	let t71;
-    	let div52;
-    	let div45;
-    	let div44;
-    	let label21;
-    	let t73;
-    	let input21;
-    	let t74;
-    	let div47;
-    	let div46;
-    	let label22;
-    	let t76;
-    	let input22;
-    	let t77;
-    	let div49;
-    	let div48;
-    	let label23;
-    	let t79;
-    	let input23;
-    	let t80;
-    	let div51;
-    	let div50;
-    	let label24;
-    	let t82;
-    	let input24;
-    	let t83;
-    	let hr1;
-    	let t84;
-    	let h63;
-    	let t86;
-    	let div55;
-    	let div54;
-    	let div53;
-    	let label25;
-    	let t88;
-    	let textarea;
-    	let t89;
-    	let button1;
     	let mounted;
     	let dispose;
 
     	return {
     		c() {
-    			div58 = element("div");
+    			div46 = element("div");
     			div1 = element("div");
 
-    			div1.innerHTML = `<div class="text-center flex justify-between"><h6 class="text-blueGray-700 text-xl font-bold">My account</h6> 
-      <button class="bg-red-400 text-white active:bg-red-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">Save</button></div>`;
+    			div1.innerHTML = `<div class="text-center flex justify-between"><h6 class="text-blueGray-700 text-xl font-bold">Register Member</h6> 
+      <button class="bg-red-400 text-white active:bg-red-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button">Register</button></div>`;
 
     			t3 = space();
-    			div57 = element("div");
+    			div45 = element("div");
     			form = element("form");
     			h61 = element("h6");
     			h61.textContent = "User Information";
     			t5 = space();
-    			div56 = element("div");
+    			div44 = element("div");
     			div3 = element("div");
     			div2 = element("div");
     			label0 = element("label");
@@ -28936,56 +28875,6 @@ var app = (function () {
     			label20.textContent = "Monthly Charge";
     			t67 = space();
     			input20 = element("input");
-    			t68 = space();
-    			hr0 = element("hr");
-    			t69 = space();
-    			h62 = element("h6");
-    			h62.textContent = "Contact Information";
-    			t71 = space();
-    			div52 = element("div");
-    			div45 = element("div");
-    			div44 = element("div");
-    			label21 = element("label");
-    			label21.textContent = "Address";
-    			t73 = space();
-    			input21 = element("input");
-    			t74 = space();
-    			div47 = element("div");
-    			div46 = element("div");
-    			label22 = element("label");
-    			label22.textContent = "City";
-    			t76 = space();
-    			input22 = element("input");
-    			t77 = space();
-    			div49 = element("div");
-    			div48 = element("div");
-    			label23 = element("label");
-    			label23.textContent = "Country";
-    			t79 = space();
-    			input23 = element("input");
-    			t80 = space();
-    			div51 = element("div");
-    			div50 = element("div");
-    			label24 = element("label");
-    			label24.textContent = "Postal Code";
-    			t82 = space();
-    			input24 = element("input");
-    			t83 = space();
-    			hr1 = element("hr");
-    			t84 = space();
-    			h63 = element("h6");
-    			h63.textContent = "About Me";
-    			t86 = space();
-    			div55 = element("div");
-    			div54 = element("div");
-    			div53 = element("div");
-    			label25 = element("label");
-    			label25.textContent = "About me";
-    			t88 = space();
-    			textarea = element("textarea");
-    			t89 = space();
-    			button1 = element("button");
-    			button1.textContent = "Submit";
     			attr(div1, "class", "rounded-t bg-white mb-0 px-6 py-6");
     			attr(h61, "class", "text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase");
     			attr(label0, "class", "block uppercase text-blueGray-600 text-xs font-bold mb-2");
@@ -29135,255 +29024,165 @@ var app = (function () {
     			attr(input20, "class", "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150");
     			attr(div42, "class", "relative w-full mb-3");
     			attr(div43, "class", "w-full lg:w-6/12 px-4");
-    			attr(hr0, "class", "mt-6 border-b-1 border-blueGray-300");
-    			attr(h62, "class", "text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase");
-    			attr(label21, "class", "block uppercase text-blueGray-600 text-xs font-bold mb-2");
-    			attr(label21, "for", "address");
-    			attr(input21, "id", "address");
-    			attr(input21, "type", "text");
-    			attr(input21, "class", "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150");
-    			attr(div44, "class", "relative w-full mb-3");
-    			attr(div45, "class", "w-full lg:w-12/12 px-4");
-    			attr(label22, "class", "block uppercase text-blueGray-600 text-xs font-bold mb-2");
-    			attr(label22, "for", "city");
-    			attr(input22, "id", "city");
-    			attr(input22, "type", "text");
-    			attr(input22, "class", "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150");
-    			attr(div46, "class", "relative w-full mb-3");
-    			attr(div47, "class", "w-full lg:w-4/12 px-4");
-    			attr(label23, "class", "block uppercase text-blueGray-600 text-xs font-bold mb-2");
-    			attr(label23, "for", "country");
-    			attr(input23, "id", "country");
-    			attr(input23, "type", "text");
-    			attr(input23, "class", "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150");
-    			attr(div48, "class", "relative w-full mb-3");
-    			attr(div49, "class", "w-full lg:w-4/12 px-4");
-    			attr(label24, "class", "block uppercase text-blueGray-600 text-xs font-bold mb-2");
-    			attr(label24, "for", "postal-code");
-    			attr(input24, "id", "postal-code");
-    			attr(input24, "type", "text");
-    			attr(input24, "class", "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150");
-    			attr(div50, "class", "relative w-full mb-3");
-    			attr(div51, "class", "w-full lg:w-4/12 px-4");
-    			attr(div52, "class", "flex flex-wrap");
-    			attr(hr1, "class", "mt-6 border-b-1 border-blueGray-300");
-    			attr(h63, "class", "text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase");
-    			attr(label25, "class", "block uppercase text-blueGray-600 text-xs font-bold mb-2");
-    			attr(label25, "for", "about-me");
-    			attr(textarea, "id", "about-me");
-    			attr(textarea, "rows", "4");
-    			attr(textarea, "class", "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150");
-    			attr(div53, "class", "relative w-full mb-3");
-    			attr(div54, "class", "w-full lg:w-12/12 px-4");
-    			attr(div55, "class", "flex flex-wrap");
-    			attr(button1, "type", "submit");
-    			attr(button1, "class", "bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150");
-    			attr(div56, "class", "flex flex-wrap");
-    			attr(div57, "class", "flex-auto px-4 lg:px-10 py-10 pt-0");
-    			attr(div58, "class", "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0");
+    			attr(div44, "class", "flex flex-wrap");
+    			attr(div45, "class", "flex-auto px-4 lg:px-10 py-10 pt-0");
+    			attr(div46, "class", "relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0");
     		},
     		m(target, anchor) {
-    			insert(target, div58, anchor);
-    			append(div58, div1);
-    			append(div58, t3);
-    			append(div58, div57);
-    			append(div57, form);
+    			insert(target, div46, anchor);
+    			append(div46, div1);
+    			append(div46, t3);
+    			append(div46, div45);
+    			append(div45, form);
     			append(form, h61);
     			append(form, t5);
-    			append(form, div56);
-    			append(div56, div3);
+    			append(form, div44);
+    			append(div44, div3);
     			append(div3, div2);
     			append(div2, label0);
     			append(div2, t7);
     			append(div2, input0);
     			set_input_value(input0, /*user*/ ctx[0].member_id);
-    			append(div56, t8);
-    			append(div56, div5);
+    			append(div44, t8);
+    			append(div44, div5);
     			append(div5, div4);
     			append(div4, label1);
     			append(div4, t10);
     			append(div4, input1);
     			set_input_value(input1, /*user*/ ctx[0].first_name);
-    			append(div56, t11);
-    			append(div56, div7);
+    			append(div44, t11);
+    			append(div44, div7);
     			append(div7, div6);
     			append(div6, label2);
     			append(div6, t13);
     			append(div6, input2);
     			set_input_value(input2, /*user*/ ctx[0].middle_name);
-    			append(div56, t14);
-    			append(div56, div9);
+    			append(div44, t14);
+    			append(div44, div9);
     			append(div9, div8);
     			append(div8, label3);
     			append(div8, t16);
     			append(div8, input3);
     			set_input_value(input3, /*user*/ ctx[0].last_name);
-    			append(div56, t17);
-    			append(div56, div11);
+    			append(div44, t17);
+    			append(div44, div11);
     			append(div11, div10);
     			append(div10, label4);
     			append(div10, t19);
     			append(div10, input4);
     			set_input_value(input4, /*user*/ ctx[0].user_name);
-    			append(div56, t20);
-    			append(div56, div13);
+    			append(div44, t20);
+    			append(div44, div13);
     			append(div13, div12);
     			append(div12, label5);
     			append(div12, t22);
     			append(div12, input5);
     			set_input_value(input5, /*user*/ ctx[0].password);
-    			append(div56, t23);
-    			append(div56, div15);
+    			append(div44, t23);
+    			append(div44, div15);
     			append(div15, div14);
     			append(div14, label6);
     			append(div14, t25);
     			append(div14, input6);
     			set_input_value(input6, /*user*/ ctx[0].email);
-    			append(div56, t26);
-    			append(div56, div17);
+    			append(div44, t26);
+    			append(div44, div17);
     			append(div17, div16);
     			append(div16, label7);
     			append(div16, t28);
     			append(div16, input7);
     			set_input_value(input7, /*user*/ ctx[0].phone_number);
-    			append(div56, t29);
-    			append(div56, div19);
+    			append(div44, t29);
+    			append(div44, div19);
     			append(div19, div18);
     			append(div18, label8);
     			append(div18, t31);
     			append(div18, input8);
     			set_input_value(input8, /*user*/ ctx[0].position);
-    			append(div56, t32);
-    			append(div56, div21);
+    			append(div44, t32);
+    			append(div44, div21);
     			append(div21, div20);
     			append(div20, label9);
     			append(div20, t34);
     			append(div20, input9);
     			set_input_value(input9, /*user*/ ctx[0].date_of_joining);
-    			append(div56, t35);
-    			append(div56, div23);
+    			append(div44, t35);
+    			append(div44, div23);
     			append(div23, div22);
     			append(div22, label10);
     			append(div22, t37);
     			append(div22, input10);
     			set_input_value(input10, /*user*/ ctx[0].position_in_ukeum);
-    			append(div56, t38);
-    			append(div56, div25);
+    			append(div44, t38);
+    			append(div44, div25);
     			append(div25, div24);
     			append(div24, label11);
     			append(div24, t40);
     			append(div24, input11);
     			set_input_value(input11, /*user*/ ctx[0].occupation);
-    			append(div56, t41);
-    			append(div56, div27);
+    			append(div44, t41);
+    			append(div44, div27);
     			append(div27, div26);
     			append(div26, label12);
     			append(div26, t43);
     			append(div26, input12);
     			set_input_value(input12, /*user*/ ctx[0].department_id);
-    			append(div56, t44);
-    			append(div56, div29);
+    			append(div44, t44);
+    			append(div44, div29);
     			append(div29, div28);
     			append(div28, label13);
     			append(div28, t46);
     			append(div28, input13);
     			set_input_value(input13, /*user*/ ctx[0].employer);
-    			append(div56, t47);
-    			append(div56, div31);
+    			append(div44, t47);
+    			append(div44, div31);
     			append(div31, div30);
     			append(div30, label14);
     			append(div30, t49);
     			append(div30, input14);
     			set_input_value(input14, /*user*/ ctx[0].qualification);
-    			append(div56, t50);
-    			append(div56, div33);
+    			append(div44, t50);
+    			append(div44, div33);
     			append(div33, div32);
     			append(div32, label15);
     			append(div32, t52);
     			append(div32, input15);
     			set_input_value(input15, /*user*/ ctx[0].specialization);
-    			append(div56, t53);
-    			append(div56, div35);
+    			append(div44, t53);
+    			append(div44, div35);
     			append(div35, div34);
     			append(div34, label16);
     			append(div34, t55);
     			append(div34, input16);
     			set_input_value(input16, /*user*/ ctx[0].national_id);
-    			append(div56, t56);
-    			append(div56, div37);
+    			append(div44, t56);
+    			append(div44, div37);
     			append(div37, div36);
     			append(div36, label17);
     			append(div36, t58);
     			append(div36, input17);
     			set_input_value(input17, /*user*/ ctx[0].national_id_type);
-    			append(div56, t59);
-    			append(div56, div39);
+    			append(div44, t59);
+    			append(div44, div39);
     			append(div39, div38);
     			append(div38, label18);
     			append(div38, t61);
     			append(div38, input18);
     			set_input_value(input18, /*user*/ ctx[0].institution);
-    			append(div56, t62);
-    			append(div56, div41);
+    			append(div44, t62);
+    			append(div44, div41);
     			append(div41, div40);
     			append(div40, label19);
     			append(div40, t64);
     			append(div40, input19);
     			set_input_value(input19, /*user*/ ctx[0].member_status);
-    			append(div56, t65);
-    			append(div56, div43);
+    			append(div44, t65);
+    			append(div44, div43);
     			append(div43, div42);
     			append(div42, label20);
     			append(div42, t67);
     			append(div42, input20);
     			set_input_value(input20, /*user*/ ctx[0].monthlyCharge);
-    			append(div56, t68);
-    			append(div56, hr0);
-    			append(div56, t69);
-    			append(div56, h62);
-    			append(div56, t71);
-    			append(div56, div52);
-    			append(div52, div45);
-    			append(div45, div44);
-    			append(div44, label21);
-    			append(div44, t73);
-    			append(div44, input21);
-    			set_input_value(input21, /*user*/ ctx[0].address);
-    			append(div52, t74);
-    			append(div52, div47);
-    			append(div47, div46);
-    			append(div46, label22);
-    			append(div46, t76);
-    			append(div46, input22);
-    			set_input_value(input22, /*user*/ ctx[0].city);
-    			append(div52, t77);
-    			append(div52, div49);
-    			append(div49, div48);
-    			append(div48, label23);
-    			append(div48, t79);
-    			append(div48, input23);
-    			set_input_value(input23, /*user*/ ctx[0].country);
-    			append(div52, t80);
-    			append(div52, div51);
-    			append(div51, div50);
-    			append(div50, label24);
-    			append(div50, t82);
-    			append(div50, input24);
-    			set_input_value(input24, /*user*/ ctx[0].postalCode);
-    			append(div56, t83);
-    			append(div56, hr1);
-    			append(div56, t84);
-    			append(div56, h63);
-    			append(div56, t86);
-    			append(div56, div55);
-    			append(div55, div54);
-    			append(div54, div53);
-    			append(div53, label25);
-    			append(div53, t88);
-    			append(div53, textarea);
-    			set_input_value(textarea, /*user*/ ctx[0].aboutMe);
-    			append(div56, t89);
-    			append(div56, button1);
 
     			if (!mounted) {
     				dispose = [
@@ -29408,11 +29207,6 @@ var app = (function () {
     					listen(input18, "input", /*input18_input_handler*/ ctx[20]),
     					listen(input19, "input", /*input19_input_handler*/ ctx[21]),
     					listen(input20, "input", /*input20_input_handler*/ ctx[22]),
-    					listen(input21, "input", /*input21_input_handler*/ ctx[23]),
-    					listen(input22, "input", /*input22_input_handler*/ ctx[24]),
-    					listen(input23, "input", /*input23_input_handler*/ ctx[25]),
-    					listen(input24, "input", /*input24_input_handler*/ ctx[26]),
-    					listen(textarea, "input", /*textarea_input_handler*/ ctx[27]),
     					listen(form, "submit", prevent_default(/*handleSubmit*/ ctx[1]))
     				];
 
@@ -29503,31 +29297,11 @@ var app = (function () {
     			if (dirty & /*user*/ 1 && to_number(input20.value) !== /*user*/ ctx[0].monthlyCharge) {
     				set_input_value(input20, /*user*/ ctx[0].monthlyCharge);
     			}
-
-    			if (dirty & /*user*/ 1 && input21.value !== /*user*/ ctx[0].address) {
-    				set_input_value(input21, /*user*/ ctx[0].address);
-    			}
-
-    			if (dirty & /*user*/ 1 && input22.value !== /*user*/ ctx[0].city) {
-    				set_input_value(input22, /*user*/ ctx[0].city);
-    			}
-
-    			if (dirty & /*user*/ 1 && input23.value !== /*user*/ ctx[0].country) {
-    				set_input_value(input23, /*user*/ ctx[0].country);
-    			}
-
-    			if (dirty & /*user*/ 1 && input24.value !== /*user*/ ctx[0].postalCode) {
-    				set_input_value(input24, /*user*/ ctx[0].postalCode);
-    			}
-
-    			if (dirty & /*user*/ 1) {
-    				set_input_value(textarea, /*user*/ ctx[0].aboutMe);
-    			}
     		},
     		i: noop,
     		o: noop,
     		d(detaching) {
-    			if (detaching) detach(div58);
+    			if (detaching) detach(div46);
     			mounted = false;
     			run_all(dispose);
     		}
@@ -29674,31 +29448,6 @@ var app = (function () {
     		$$invalidate(0, user);
     	}
 
-    	function input21_input_handler() {
-    		user.address = this.value;
-    		$$invalidate(0, user);
-    	}
-
-    	function input22_input_handler() {
-    		user.city = this.value;
-    		$$invalidate(0, user);
-    	}
-
-    	function input23_input_handler() {
-    		user.country = this.value;
-    		$$invalidate(0, user);
-    	}
-
-    	function input24_input_handler() {
-    		user.postalCode = this.value;
-    		$$invalidate(0, user);
-    	}
-
-    	function textarea_input_handler() {
-    		user.aboutMe = this.value;
-    		$$invalidate(0, user);
-    	}
-
     	return [
     		user,
     		handleSubmit,
@@ -29722,12 +29471,7 @@ var app = (function () {
     		input17_input_handler,
     		input18_input_handler,
     		input19_input_handler,
-    		input20_input_handler,
-    		input21_input_handler,
-    		input22_input_handler,
-    		input23_input_handler,
-    		input24_input_handler,
-    		textarea_input_handler
+    		input20_input_handler
     	];
     }
 
@@ -29787,6 +29531,27 @@ var app = (function () {
 
     /* src/layouts/Admin.svelte generated by Svelte v3.35.0 */
 
+    function create_else_block(ctx) {
+    	let div1;
+
+    	return {
+    		c() {
+    			div1 = element("div");
+    			div1.innerHTML = `<div class="px-4 md:px-10 mx-auto w-full"></div>`;
+    			attr(div1, "class", "relative bg-slate-500 md:pt-32 pb-16 pt-12");
+    		},
+    		m(target, anchor) {
+    			insert(target, div1, anchor);
+    		},
+    		i: noop,
+    		o: noop,
+    		d(detaching) {
+    			if (detaching) detach(div1);
+    		}
+    	};
+    }
+
+    // (27:4) {#if !location.href.includes("/admin/department")}
     function create_if_block(ctx) {
     	let headerstats;
     	let current;
@@ -29815,7 +29580,7 @@ var app = (function () {
     	};
     }
 
-    // (31:6) <Router url="admin">
+    // (38:6) <Router url="admin">
     function create_default_slot$2(ctx) {
     	let route0;
     	let t0;
@@ -29830,6 +29595,8 @@ var app = (function () {
     	let route5;
     	let t5;
     	let route6;
+    	let t6;
+    	let route7;
     	let current;
 
     	route0 = new Route({
@@ -29869,6 +29636,8 @@ var app = (function () {
     			}
     		});
 
+    	route7 = new Route({ props: { path: "auth", component: Auth } });
+
     	return {
     		c() {
     			create_component(route0.$$.fragment);
@@ -29884,6 +29653,8 @@ var app = (function () {
     			create_component(route5.$$.fragment);
     			t5 = space();
     			create_component(route6.$$.fragment);
+    			t6 = space();
+    			create_component(route7.$$.fragment);
     		},
     		m(target, anchor) {
     			mount_component(route0, target, anchor);
@@ -29899,6 +29670,8 @@ var app = (function () {
     			mount_component(route5, target, anchor);
     			insert(target, t5, anchor);
     			mount_component(route6, target, anchor);
+    			insert(target, t6, anchor);
+    			mount_component(route7, target, anchor);
     			current = true;
     		},
     		p: noop,
@@ -29911,6 +29684,7 @@ var app = (function () {
     			transition_in(route4.$$.fragment, local);
     			transition_in(route5.$$.fragment, local);
     			transition_in(route6.$$.fragment, local);
+    			transition_in(route7.$$.fragment, local);
     			current = true;
     		},
     		o(local) {
@@ -29921,6 +29695,7 @@ var app = (function () {
     			transition_out(route4.$$.fragment, local);
     			transition_out(route5.$$.fragment, local);
     			transition_out(route6.$$.fragment, local);
+    			transition_out(route7.$$.fragment, local);
     			current = false;
     		},
     		d(detaching) {
@@ -29937,6 +29712,8 @@ var app = (function () {
     			destroy_component(route5, detaching);
     			if (detaching) detach(t5);
     			destroy_component(route6, detaching);
+    			if (detaching) detach(t6);
+    			destroy_component(route7, detaching);
     		}
     	};
     }
@@ -29948,7 +29725,9 @@ var app = (function () {
     	let div1;
     	let adminnavbar;
     	let t1;
-    	let show_if = !/*location*/ ctx[0].href.includes("/admin/department");
+    	let show_if;
+    	let current_block_type_index;
+    	let if_block;
     	let t2;
     	let div0;
     	let router;
@@ -29957,7 +29736,17 @@ var app = (function () {
     	let current;
     	sidebar = new Sidebar({ props: { location: /*location*/ ctx[0] } });
     	adminnavbar = new AdminNavbar({});
-    	let if_block = show_if && create_if_block();
+    	const if_block_creators = [create_if_block, create_else_block];
+    	const if_blocks = [];
+
+    	function select_block_type(ctx, dirty) {
+    		if (dirty & /*location*/ 1) show_if = !!!/*location*/ ctx[0].href.includes("/admin/department");
+    		if (show_if) return 0;
+    		return 1;
+    	}
+
+    	current_block_type_index = select_block_type(ctx, -1);
+    	if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
 
     	router = new Router({
     			props: {
@@ -29977,7 +29766,7 @@ var app = (function () {
     			div1 = element("div");
     			create_component(adminnavbar.$$.fragment);
     			t1 = space();
-    			if (if_block) if_block.c();
+    			if_block.c();
     			t2 = space();
     			div0 = element("div");
     			create_component(router.$$.fragment);
@@ -29993,7 +29782,7 @@ var app = (function () {
     			append(div2, div1);
     			mount_component(adminnavbar, div1, null);
     			append(div1, t1);
-    			if (if_block) if_block.m(div1, null);
+    			if_blocks[current_block_type_index].m(div1, null);
     			append(div1, t2);
     			append(div1, div0);
     			mount_component(router, div0, null);
@@ -30005,27 +29794,26 @@ var app = (function () {
     			const sidebar_changes = {};
     			if (dirty & /*location*/ 1) sidebar_changes.location = /*location*/ ctx[0];
     			sidebar.$set(sidebar_changes);
-    			if (dirty & /*location*/ 1) show_if = !/*location*/ ctx[0].href.includes("/admin/department");
+    			let previous_block_index = current_block_type_index;
+    			current_block_type_index = select_block_type(ctx, dirty);
 
-    			if (show_if) {
-    				if (if_block) {
-    					if (dirty & /*location*/ 1) {
-    						transition_in(if_block, 1);
-    					}
-    				} else {
-    					if_block = create_if_block();
-    					if_block.c();
-    					transition_in(if_block, 1);
-    					if_block.m(div1, t2);
-    				}
-    			} else if (if_block) {
+    			if (current_block_type_index !== previous_block_index) {
     				group_outros();
 
-    				transition_out(if_block, 1, 1, () => {
-    					if_block = null;
+    				transition_out(if_blocks[previous_block_index], 1, 1, () => {
+    					if_blocks[previous_block_index] = null;
     				});
 
     				check_outros();
+    				if_block = if_blocks[current_block_type_index];
+
+    				if (!if_block) {
+    					if_block = if_blocks[current_block_type_index] = if_block_creators[current_block_type_index](ctx);
+    					if_block.c();
+    				}
+
+    				transition_in(if_block, 1);
+    				if_block.m(div1, t2);
     			}
 
     			const router_changes = {};
@@ -30057,7 +29845,7 @@ var app = (function () {
     			if (detaching) detach(div2);
     			destroy_component(sidebar);
     			destroy_component(adminnavbar);
-    			if (if_block) if_block.d();
+    			if_blocks[current_block_type_index].d();
     			destroy_component(router);
     			destroy_component(footeradmin);
     		}

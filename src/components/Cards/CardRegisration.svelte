@@ -39,12 +39,12 @@
 >
   <div class="rounded-t bg-white mb-0 px-6 py-6">
     <div class="text-center flex justify-between">
-      <h6 class="text-blueGray-700 text-xl font-bold">My account</h6>
+      <h6 class="text-blueGray-700 text-xl font-bold">Register Member</h6>
       <button
         class="bg-red-400 text-white active:bg-red-500 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
         type="button"
       >
-        Save
+        Register
       </button>
     </div>
   </div>
@@ -368,105 +368,6 @@
             />
           </div>
         </div>
-
-        <!-- Contact Information -->
-        <hr class="mt-6 border-b-1 border-blueGray-300" />
-        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
-          Contact Information
-        </h6>
-        <!-- Add other input fields for contact information -->
-        <div class="flex flex-wrap">
-          <div class="w-full lg:w-12/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                for="address">Address</label
-              >
-              <input
-                id="address"
-                type="text"
-                bind:value={user.address}
-                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-          <!-- Add other input fields for contact information -->
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                for="city">City</label
-              >
-              <input
-                id="city"
-                type="text"
-                bind:value={user.city}
-                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-          <!-- Add other input fields for contact information -->
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                for="country">Country</label
-              >
-              <input
-                id="country"
-                type="text"
-                bind:value={user.country}
-                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-          <!-- Add other input fields for contact information -->
-          <div class="w-full lg:w-4/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                for="postal-code">Postal Code</label
-              >
-              <input
-                id="postal-code"
-                type="text"
-                bind:value={user.postalCode}
-                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              />
-            </div>
-          </div>
-        </div>
-
-        <!-- About Me -->
-        <hr class="mt-6 border-b-1 border-blueGray-300" />
-        <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
-          About Me
-        </h6>
-        <!-- Add other input fields for About Me -->
-        <div class="flex flex-wrap">
-          <div class="w-full lg:w-12/12 px-4">
-            <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                for="about-me">About me</label
-              >
-              <textarea
-                id="about-me"
-                bind:value={user.aboutMe}
-                rows="4"
-                class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-              ></textarea>
-            </div>
-          </div>
-        </div>
-
-        <!-- Submit Button -->
-        <button
-          type="submit"
-          class="bg-emerald-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
-        >
-          Submit
-        </button>
       </div>
     </form>
   </div>
