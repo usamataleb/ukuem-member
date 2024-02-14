@@ -13,6 +13,7 @@
   import Statement from "views/admin/Statement.svelte";
   import Contribution from "../views/admin/Contribution.svelte";
   import Department from "../views/admin/Department.svelte";
+  import Registration from "../views/admin/Registration.svelte";
 
   export let location;
 </script>
@@ -31,6 +32,7 @@
         <Route path="/" component={Dashboard} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="settings" component={Settings} />
+        <Route path="registration" component={Registration} />
         <Route path="contribution" component={Contribution} />
         <Route path="statement" component={Statement} />
         <Route path="department" component={Department} />

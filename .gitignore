@@ -13,7 +13,6 @@
 /.vscode/
 .DS_Store
 
-# Ignore Node.js modules
 node_modules/
 
 # Ignore npm debugging logs
