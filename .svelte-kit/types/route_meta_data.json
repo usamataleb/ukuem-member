@@ -1,0 +1,26 @@
+{
+	"/": [
+		"src/routes/+page.ts"
+	],
+	"/admin": [
+		"src/routes/admin/+page.ts",
+		"src/routes/admin/+layout.ts",
+		"src/routes/admin/+layout.ts"
+	],
+	"/admin/contribution": [
+		"src/routes/admin/+layout.ts"
+	],
+	"/admin/department": [
+		"src/routes/admin/+layout.ts"
+	],
+	"/admin/registration": [
+		"src/routes/admin/registration/+page.ts",
+		"src/routes/admin/+layout.ts"
+	],
+	"/admin/settings": [
+		"src/routes/admin/+layout.ts"
+	],
+	"/admin/statement": [
+		"src/routes/admin/+layout.ts"
+	]
+}
