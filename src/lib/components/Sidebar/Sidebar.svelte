@@ -123,7 +123,7 @@
 								? 'opacity-75'
 								: 'text-blueGray-300'}"
 						></i>
-						Dashboard {name}
+						Dashboard
 					</a>
 				</li>
 

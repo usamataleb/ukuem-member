@@ -42,10 +42,35 @@ export interface response {
     errors: string;
     status: number;
 }
+export interface donation {
+    donation_id : number;
+    year_id : number;
+    month_id : number;
+    amount : number;
+    userID : number;
+}
+
+
+export interface year {
+    year_id: string,
+    year_name: string
+}
+
+interface DatasetConfig {
+    label: string;
+    data: number[];
+    fill?: boolean;
+    backgroundColor: string;
+    borderColor: string;
+    barThickness: number;
+}
 
 // Define a type that represents the structure of your interfaces
 export type InterfaceTypes = {
     Card: Card;
     User: user;
     response: response;
+    donation: donation;
+    year: year;
+    datasets: DatasetConfig;
 };

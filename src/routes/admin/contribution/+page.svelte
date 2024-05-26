@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   // core components
   import CardTable from "$lib/components/Cards/CardTable.svelte";
     import CardForm from "$lib/components/Cards/CardForm.svelte";

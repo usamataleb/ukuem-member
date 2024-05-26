@@ -62,10 +62,24 @@ async function init() {
 }
 
 async function register(Data: User) {
-	const { data } = await axios.post(`${API_URL}/users`, Data, { 
+	const { data } = await axios.post(`${API_URL}/users`, Data, {
 		'headers': { 'Content-Type': 'multipart/form-data'}});
 	const cookie = `Authorization="${encodeURIComponent(data)}"; path=/; Secure; SameSite=Strict`; //; HttpOnly
 	document.cookie = cookie;
+	await init();
+	return data;
+}
+
+async function getDonation(id: string) {
+    const response = await fetch(`${API_URL}/Donations/${id}`);
+    const data = await response.json();
+	await init();
+	return data;
+}
+
+async function getAllDonation() {
+    const response = await fetch(`${API_URL}/Donations`);
+    const data = await response.json();
 	await init();
 	return data;
 }
@@ -95,6 +109,13 @@ async function getUser(id: string) {
 	return data;
 }
 
+async function getYear() {
+    const response = await fetch(`${API_URL}/Years`);
+    const data = await response.json();	
+	await init();
+	return data;
+}
+
 async function logout() {
 	const cookie = `Authorization=; expires=${new Date(
 		0
@@ -112,5 +133,8 @@ export const user = {
 	login,
 	logout,
 	getUser,
+	getDonation,
+	getAllDonation,
+	getYear,
 	init
 };

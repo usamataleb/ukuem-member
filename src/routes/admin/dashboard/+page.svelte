@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	// core components
 	import CardLineChart from '$lib/components/Cards/CardLineChart.svelte';
 	import CardProfile from '$lib/components/Cards/CardProfile.svelte';
@@ -7,22 +7,35 @@
 	import { authenticated } from '$lib/services/auth';
 	import registerBg2 from '$lib/images/register_bg_2.png';
 	import { fly } from 'svelte/transition';
+	import CardBarChart from '$lib/components/Cards/CardBarChart.svelte';
+	import { user } from '$lib/services/User';
+	import type { InterfaceTypes } from '$lib/services/interfaces';
+	import { onMount } from 'svelte';
 
 	// export let location;
+
+	let amount: string[] = [];
+	let year: string[] = [];
+
+
+	onMount(async () => {
+		amount = await user.getAllDonation();
+		year = await user.getYear();
+	});
 
 	const Headings = ['Name', 'Department', 'Completion %'];
 </script>
 
-<div >
-	<div class="flex flex-wrap" in:fly={{ y: 200, duration: 800, delay: 10 }}  >
+<div>
+	<div class="flex flex-wrap" in:fly={{ y: 200, duration: 800, delay: 10 }}>
 		<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4 mt-16">
-			<CardLineChart />
+			<CardBarChart doner={amount} years={year} />
 		</div>
 		<div class="w-full xl:w-4/12 px-4">
 			<CardProfile />
 		</div>
 	</div>
-	<div class="flex flex-wrap mt-4" in:fly={{ y: -200, duration: 800, delay: 10 }}  >
+	<div class="flex flex-wrap mt-4" in:fly={{ y: -200, duration: 800, delay: 10 }}>
 		<div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
 			<CardPageVisits />
 		</div>
@@ -30,5 +43,4 @@
 			<CardSocialTraffic heading="Top Contributors" tableHeading={Headings} dashboard={true} />
 		</div>
 	</div>
-
 </div>

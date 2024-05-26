@@ -4,12 +4,15 @@
 	import { user } from '$lib/services/User';
 	import type { InterfaceTypes } from '$lib/services/interfaces';
 	import { onMount } from 'svelte';
+	import { API_URL } from '$lib/APi_url';
+
+	let imageUrl: string;
+	// let image: any;
+	let imageBlob: any;
 
 	let id: string | null;
 
-
-
-	let getUser: InterfaceTypes["User"] = {
+	let getUser: InterfaceTypes['User'] = {
 		member_id: '',
 		first_name: '',
 		middle_name: '',
@@ -35,17 +38,32 @@
 		monthlyCharge: null
 	};
 
+	async function fetchImage(imageUrl: string) {
+		try {
+			const response = await fetch(`${API_URL}/images/${imageUrl}`);
+			if (!response.ok) {
+				throw new Error('Image not found');
+			}
+			const blob = await response.blob();
+			console.log(blob);
+			return URL.createObjectURL(blob);
+		} catch (error) {
+			console.error('Error fetching image:', error);
+		}
+	}
+
 	onMount(async () => {
 		id = localStorage.getItem('id');
-
-		console.log('User Id Is: ' + id);
 
 		if (id !== null) {
 			getUser = await user.getUser(id);
 
-			console.log("Hello",getUser.phone_number);
+			if (getUser.image_field) {
+				imageUrl = getUser.image_field;
+
+				imageBlob = await fetchImage(imageUrl);
+			}
 		} else {
-			console.error('User ID is null');
 		}
 	});
 </script>
@@ -53,13 +71,13 @@
 <div
 	class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16"
 >
-	<div class="px-6 pb-6 ">
+	<div class="px-6 pb-6">
 		<div class="flex flex-wrap justify-center">
 			<div class="w-full px-4 flex justify-center">
 				<div class="relative">
 					<img
-						alt="..."
-						src={ getUser.image_field ? `data:image/jpeg;base64, ${getUser.image_field}` : defaultPc}
+						alt="Not Found"
+						src={imageBlob ? imageBlob : defaultPc}
 						class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
 					/>
 				</div>
