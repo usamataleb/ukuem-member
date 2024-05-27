@@ -32,7 +32,7 @@
 <div>
 	<a
 		class="text-blueGray-500 block"
-		href="#pablo"
+		href=""
 		bind:this={btnDropdownRef}
 		on:click={toggleDropdown}
 	>

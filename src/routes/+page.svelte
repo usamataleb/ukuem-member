@@ -139,7 +139,7 @@
 				</div>
 				<div class="flex flex-wrap mt-6 relative">
 					<div class="w-1/2">
-						<a href="#pablo" on:click={(e) => e.preventDefault()} class="text-blueGray-200">
+						<a href="" on:click={(e) => e.preventDefault()} class="text-blueGray-200">
 							<small>Forgot password?</small>
 						</a>
 					</div>
@@ -219,7 +219,7 @@
 									/>
 									<span class="ml-2 text-sm font-semibold text-blueGray-600">
 										I agree with the
-										<a href="#pablo" on:click={(e) => e.preventDefault()} class="text-red-500">
+										<a href="" on:click={(e) => e.preventDefault()} class="text-red-500">
 											Privacy Policy
 										</a>
 									</span>
