@@ -41,7 +41,7 @@
 				await goto('/admin/dashboard');
 			} catch (error) {
 				console.error('Login Failed:', error);
-
+				toast.error("Login Failed");
 				return {
 					status: 302,
 					redirect: '/'
